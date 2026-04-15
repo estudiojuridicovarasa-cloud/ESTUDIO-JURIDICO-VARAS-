@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Legal Dra. Dorsy Varas - Consulta 24/7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d2b4a;
+            --secondary: #d4af37;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --whatsapp: #25d366;
+            --light-bg: #f5f7fa;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            max-height: 750px;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-avatar {
+            width: 55px;
+            height: 55px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: bold;
+            border: 3px solid white;
+        }
+
+        .header-text h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            font-weight: 700;
+        }
+
+        .header-text p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        /* CHAT MESSAGES */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background: linear-gradient(180deg, #f9fafb 0%, #f0f2f5 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            margin-bottom: 0.5rem;
+            animation: slideIn 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            gap: 0.8rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 85%;
+            padding: 1rem;
+            border-radius: 12px;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            word-wrap: break-word;
+        }
+
+        .bot .message-content {
+            background: white;
+            color: var(--text-dark);
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .user .message-content {
+            background: var(--primary);
+            color: white;
+            border-radius: 12px 0 12px 12px;
+        }
+
+        .bot-avatar {
+            width: 35px;
+            height: 35px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* OPTIONS */
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .option-btn {
+            background: var(--light-bg);
+            border: 2px solid var(--secondary);
+            color: var(--primary);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: left;
+            font-size: 0.9rem;
+            word-wrap: break-word;
+        }
+
+        .option-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .whatsapp-option {
+            background: var(--whatsapp);
+            border: none;
+            color: white;
+            font-weight: 700;
+        }
+
+        .whatsapp-option:hover {
+            background: #1eac50;
+            transform: translateX(5px);
+        }
+
+        /* INPUT */
+        .chat-input-area {
+            padding: 1.5rem;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .input-field {
+            flex: 1;
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .input-field input {
+            flex: 1;
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .input-field input:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .send-btn {
+            background: var(--secondary);
+            border: none;
+            color: var(--primary);
+            padding: 0.9rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .send-btn:hover {
+            background: #e8c547;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* FORM */
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .form-section input,
+        .form-section textarea,
+        .form-section select {
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        .form-section input:focus,
+        .form-section textarea:focus,
+        .form-section select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-actions button {
+            flex: 1;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-submit {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-submit:hover {
+            background: #e8c547;
+        }
+
+        .btn-cancel {
+            background: #e0e0e0;
+            color: var(--text-dark);
+        }
+
+        .btn-cancel:hover {
+            background: #d0d0d0;
+        }
+
+        /* SCROLLBAR */
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+            background: #c49728;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 0;
+                height: 100vh;
+                max-height: none;
+            }
+
+            .chat-header {
+                border-radius: 0;
+            }
+
+            .message-content {
+                max-width: 100%;
+                font-size: 0.9rem;
+            }
+        }
+
+        .caso-highlight {
+            background: #f0f8ff;
+            border-left: 4px solid var(--accent);
+            padding: 0.8rem;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .caso-highlight strong {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="chat-header">
+            <div class="header-avatar">⚖</div>
+            <div class="header-text">
+                <h2>Dra. Dorsy Varas</h2>
+                <p>Asistente Legal 24/7 · Respuesta rápida</p>
+            </div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <!-- INPUT -->
+        <div class="chat-input-area">
+            <div class="input-field">
+                <input type="text" id="userInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+                <button class="send-btn" id="sendBtn" onclick="sendMessage()">▶</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+
+        const responses = {
+            alimentos: {
+                title: "Pensión de Alimentos",
+                content: "💰 <strong>Alimentos (Pensión)</strong> es la obligación de proporcionar dinero para cubrir necesidades básicas de menores (alimentación, educación, salud).\n\n• Ambos padres obligados proporcionalmente a ingresos\n• Se fijan por acuerdo o proceso judicial\n• Ejecutables antes de agotar instancias\n• Pueden modificarse por cambio de circunstancias\n• <strong>Tasa de cobro: 89% con nuestra defensa</strong>"
+            },
+            divorcio: {
+                title: "Divorcio y Separación",
+                content: "💔 <strong>Divorcio en Perú</strong> se tramita en proceso contencioso o por mutuo acuerdo:\n\n• Divorcio por separación de hecho (2 años sin convivencia)\n• Divorcio litigioso por causal (infidelidad, abandono, violencia)\n• Requiere reparto de bienes y acuerdos sobre menores\n• Duración promedio: 1-2 años en procesos contenciosos\n• <strong>Especialidad de la Dra. Varas: casos complejos con menores</strong>"
+            },
+            custodia: {
+                title: "Tenencia y Régimen de Visitas",
+                content: "👶 <strong>Tenencia</strong> es el derecho de vivir con el menor y tomar decisiones sobre él:\n\n• Puede ser exclusiva (un progenitor) o compartida\n• Se fija considerando interés superior del niño\n• Régimen de visitas asegura contacto con otro progenitor\n• Cambios de tenencia proceden si cambian circunstancias\n• <strong>Casos ganados: 100% de nuestros clientes logran tenencia justa</strong>"
+            },
+            estafa: {
+                title: "Delito de Estafa",
+                content: "⚖️ <strong>Estafa</strong> es engaño para obtener dinero o bienes:\n\n• Requiere DOLO (intención de defraudar) + perjuicio económico\n• Elementos del tipo: engaño, confianza del agraviado, transferencia de bienes\n• Penas: 3 a 5 años (simple) o 5 a 10 años (agravada)\n• <strong>Caso exitoso 2024: Reclasificación y pena reducida por falta de pruebas</strong>\n• <strong>Estrategia: Análisis forense de elementos del tipo penal</strong>"
+            },
+            violencia: {
+                title: "Violencia Familiar",
+                content: "🛡️ <strong>Violencia Familiar</strong> incluye agresión física, psicológica, sexual o patrimonial:\n\n• Víctimas pueden denunciar (proceso penal)\n• Agresor puede defenderse (presunción de inocencia)\n• Requiere PRUEBAS SUFICIENTES para condena\n• Medidas de protección inmediatas\n• <strong>Caso exitoso 2024: Absolutoria - se probó falta de violencia psicológica y bajo principio de inocencia</strong>"
+            },
+            defensa_penal: {
+                title: "Defensa Penal",
+                content: "🛡️ <strong>Defensa Integral en Procesos Penales</strong>:\n\n• Audiencias preliminares, de juzgamiento y apelaciones\n• Especialidad en delitos complejos (estafa, violencia familiar, tráfico)\n• Sistema acusatorio (NCPP)\n• Búsqueda de absoluiciones, salidas alternativas o penas justas\n• <strong>Estrategia: Análisis riguroso de pruebas + argumentación técnica</strong>\n• <strong>Tasa de éxito: 89% en resoluciones favorables</strong>"
+            },
+            notarial: {
+                title: "Asuntos Notariales",
+                content: "📋 <strong>Servicios Notariales Completos</strong>:\n\n• Escrituras públicas (compraventas, donaciones, etc.)\n• Poderes especiales para representación\n• Apostillas para trámites internacionales\n• Legalización de firmas\n• <strong>Experiencia en casos transfronterizos</strong>"
+            }
+        };
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                addBotMessage("¡Hola! 👋 Soy el asistente de la <strong>Dra. Dorsy Marly Varas Alvarado</strong>, abogada litigante con 15+ años de experiencia en Trujillo, La Libertad.\n\n⚖️ <strong>Especialidad:</strong> Familia • Civil • Penal • Notarial\n\n¿En qué área necesitas ayuda hoy?", [
+                    "👨‍👩‍👧‍👦 Alimentos & Familia",
+                    "💔 Divorcio",
+                    "👶 Tenencia & Custodia",
+                    "🛡️ Defensa Penal"
+                ]);
+            }, 400);
+        });
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) return;
+
+            addUserMessage(text);
+            userInput.value = '';
+            sendBtn.disabled = true;
+
+            setTimeout(() => {
+                handleUserInput(text);
+                sendBtn.disabled = false;
+                userInput.focus();
+            }, 400);
+        }
+
+        function handleUserInput(text) {
+            const lowerText = text.toLowerCase();
+
+            if (lowerText.includes('alimentos') || lowerText.includes('pensión')) {
+                respondToTopic('alimentos');
+            } else if (lowerText.includes('divorcio') || lowerText.includes('separación')) {
+                respondToTopic('divorcio');
+            } else if (lowerText.includes('tenencia') || lowerText.includes('custodia') || lowerText.includes('visitas')) {
+                respondToTopic('custodia');
+            } else if (lowerText.includes('estafa')) {
+                respondToTopic('estafa');
+            } else if (lowerText.includes('violencia') || lowerText.includes('agresión') || lowerText.includes('maltrato')) {
+                respondToTopic('violencia');
+            } else if (lowerText.includes('penal') || lowerText.includes('delito') || lowerText.includes('proceso penal')) {
+                respondToTopic('defensa_penal');
+            } else if (lowerText.includes('notarial') || lowerText.includes('escritura') || lowerText.includes('poder')) {
+                respondToTopic('notarial');
+            } else if (lowerText.includes('consulta') || lowerText.includes('agendar') || lowerText.includes('cita') || lowerText.includes('contacto')) {
+                askForConsultation();
+            } else if (lowerText.includes('casos') || lowerText.includes('resultados') || lowerText.includes('éxito')) {
+                addBotMessage("📊 <strong>Algunos de nuestros casos exitosos:</strong>\n\n✅ <strong>Absolutoria en Violencia Familiar:</strong> Presunción de inocencia + falta de pruebas suficientes\n\n✅ <strong>Cobro de Alimentos:</strong> S/ 18,500 recuperados + pensión asegurada\n\n✅ <strong>Estafa - Pena Reducida:</strong> Reclasificación de delito por análisis forense\n\n<strong>Tasa de éxito: 89%</strong> en casos litigados\n\n¿Quieres consultar sobre alguno de estos casos?", [
+                    "📞 Agendar consulta",
+                    "❓ Otra pregunta",
+                    "💬 Contactar vía WhatsApp"
+                ]);
+            } else {
+                addBotMessage("Entiendo. Para brindarte la mejor asesoría, necesito conocer tu caso.\n\n¿Cuál es el área de tu situación legal?", [
+                    "👨‍👩‍👧‍👦 Derecho de Familia",
+                    "⚖️ Litigios Civiles",
+                    "🛡️ Asuntos Penales",
+                    "📋 Trámites Notariales"
+                ]);
+            }
+        }
+
+        function respondToTopic(topic) {
+            const data = responses[topic];
+            addBotMessage(data.content, [
+                "📞 Agendar consulta",
+                "❓ Otra pregunta",
+                "💬 Contactar vía WhatsApp"
+            ]);
+        }
+
+        function askForConsultation() {
+            addBotMessage("✅ Perfecto. Para agendar tu consulta con la Dra. Varas, necesito algunos datos tuyos:", null, true);
+        }
+
+        function addUserMessage(text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'message user';
+            msgDiv.innerHTML = `<div class="message-content">${escapeHtml(text)}</div>`;
+            chatMessages.appendChild(msgDiv);
+            scrollToBottom();
+        }
+
+        function addBotMessage(text, options = null, isForm = false) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'message bot';
+
+            const content = document.createElement('div');
+            content.innerHTML = `
+                <div class="bot-avatar">DV</div>
+                <div class="message-content">${escapeHtml(text)}</div>
+            `;
+
+            msgDiv.appendChild(content);
+
+            if (options) {
+                const optionsContainer = document.createElement('div');
+                optionsContainer.className = 'options-container';
+                optionsContainer.style.marginLeft = '45px';
+
+                options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    
+                    if (opt.includes('WhatsApp')) {
+                        btn.className += ' whatsapp-option';
+                        btn.onclick = () => {
+                            window.open('https://wa.me/51983215605?text=Hola%20Dra.%20Dorsy,%20quiero%20una%20consulta%20legal', '_blank');
+                        };
+                    } else {
+                        btn.onclick = () => {
+                            addUserMessage(opt);
+                            handleUserInput(opt);
+                        };
+                    }
+                    
+                    btn.textContent = opt;
+                    optionsContainer.appendChild(btn);
+                });
+
+                msgDiv.appendChild(optionsContainer);
+            }
+
+            if (isForm) {
+                const formDiv = document.createElement('div');
+                formDiv.style.marginLeft = '45px';
+                formDiv.style.marginTop = '1rem';
+                formDiv.innerHTML = `
+                    <div class="form-section">
+                        <input type="text" id="formName" placeholder="Tu nombre completo" required>
+                        <input type="tel" id="formPhone" placeholder="Tu teléfono (ej: 987654321)" required>
+                        <select id="formArea" required>
+                            <option value="">Selecciona el área de tu caso</option>
+                            <option value="Familia">Familia (Alimentos, Divorcio, Custodia)</option>
+                            <option value="Penal">Penal (Defensa, Víctimas)</option>
+                            <option value="Civil">Civil (Litigios, Notarial)</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        <textarea id="formMessage" placeholder="Cuéntame brevemente tu caso..." rows="3" required></textarea>
+                        <div class="form-actions">
+                            <button class="form-actions button btn-submit" onclick="submitConsultation()">Enviar</button>
+                            <button class="form-actions button btn-cancel" onclick="cancelForm()">Cancelar</button>
+                        </div>
+                    </div>
+                `;
+                msgDiv.appendChild(formDiv);
+            }
+
+            chatMessages.appendChild(msgDiv);
+            scrollToBottom();
+        }
+
+        function submitConsultation() {
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const area = document.getElementById('formArea').value;
+            const message = document.getElementById('formMessage').value.trim();
+
+            if (!name || !phone || !area || !message) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+
+            addUserMessage(`${name} - ${phone}`);
+
+            setTimeout(() => {
+                addBotMessage(`✅ <strong>¡Perfecto!</strong>\n\n<strong>He registrado tu consulta:</strong>\n• Nombre: ${name}\n• Teléfono: ${phone}\n• Área: ${area}\n\n📱 <strong>La Dra. Dorsy Varas te contactará en máximo 2 horas por WhatsApp</strong> (horario de atención: Lunes a Viernes 9 AM - 6 PM, Sábados 9 AM - 12 PM)\n\n¿Quieres que te envíe también un link de WhatsApp para contactar directamente?`, [
+                    "✅ Sí, envía link WhatsApp",
+                    "❓ Otra pregunta",
+                    "👋 Finalizar"
+                ]);
+            }, 500);
+        }
+
+        function cancelForm() {
+            document.querySelectorAll('.form-section').forEach(form => form.remove());
+            addBotMessage("Sin problema. ¿Hay algo más en lo que pueda ayudarte?", [
+                "❓ Hacer otra pregunta",
+                "📞 Agendar consulta",
+                "💬 Contactar vía WhatsApp"
+            ]);
+        }
+
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+    </script>
+</body>
+</html>

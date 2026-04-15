@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Dorsy Marly Varas Alvarado | Abogada Litigante - Trujillo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d2b4a;
+            --secondary: #d4af37;
+            --accent: #e74c3c;
+            --success: #27ae60;
+            --light-bg: #f5f7fa;
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #fff;
+        }
+
+        /* HEADER STICKY */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1eac50;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+            background-image: 
+                linear-gradient(135deg, rgba(13, 43, 74, 0.95) 0%, rgba(15, 61, 92, 0.95) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="g1" x1="0" y1="0" x2="100" y2="100"><stop offset="0" stop-color="%23d4af37" stop-opacity="0.1"/><stop offset="100" stop-color="%23fff" stop-opacity="0"/></linearGradient></defs><rect fill="url(%23g1)" width="1200" height="600"/></svg>');
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '⚖️';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-highlight {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e8c547;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            margin: 1rem auto 0;
+            border-radius: 3px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* RESULTADOS */
+        #resultados {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+            color: white;
+        }
+
+        #resultados .section-title {
+            color: white;
+        }
+
+        #resultados .section-title::after {
+            background: var(--secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid var(--secondary);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            font-size: 0.95rem;
+        }
+
+        .casos-exitos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .caso-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s;
+            border-left: 5px solid var(--success);
+        }
+
+        .caso-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .caso-header {
+            background: linear-gradient(135deg, var(--primary), #0f3d5c);
+            color: white;
+            padding: 1.5rem;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .caso-tipo {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .caso-titulo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .caso-resultado {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-top: 0.5rem;
+        }
+
+        .caso-body {
+            padding: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .caso-detalle {
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .caso-detalle strong {
+            color: var(--primary);
+        }
+
+        /* SERVICIOS */
+        #servicios {
+            background: var(--light-bg);
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .servicio-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .servicio-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .servicio-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* SOBRE */
+        #sobre {
+            background: white;
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .sobre-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .sobre-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .credenciales {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .credenciales li {
+            list-style: none;
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .credenciales li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        .sobre-imagen {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .foto-dorsy {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 4px solid var(--secondary);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .sobre-imagen h4 {
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .sobre-imagen .titulo {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* TESTIMONIOS */
+        #testimonios {
+            background: var(--light-bg);
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonio-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--secondary);
+        }
+
+        .stars {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .testimonio-texto {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+            border-left: 3px solid var(--secondary);
+            padding-left: 1rem;
+        }
+
+        .testimonio-autor {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        /* CONTACTO */
+        #contacto {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f3d5c 100%);
+            color: white;
+        }
+
+        #contacto .section-title {
+            color: white;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contacto-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contacto-icon {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .contacto-item h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .contacto-item p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .contacto-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contacto-form input,
+        .contacto-form textarea {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .contacto-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contacto-form button {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contacto-form button:hover {
+            background: #e8c547;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .sobre-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .servicio-card, .testimonio-card, .caso-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .servicio-card:nth-child(1) { animation-delay: 0.1s; }
+        .servicio-card:nth-child(2) { animation-delay: 0.2s; }
+        .servicio-card:nth-child(3) { animation-delay: 0.3s; }
+        .servicio-card:nth-child(4) { animation-delay: 0.4s; }
+        .servicio-card:nth-child(5) { animation-delay: 0.5s; }
+        .servicio-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">⚖</div>
+                <span>ESTUDIO JURÍDICO VARAS</span>
+            </div>
+            <nav>
+                <a href="#resultados">Resultados</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre">Sobre Mí</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#contacto">Contacto</a>
+                <a href="https://wa.me/51983215605?text=Hola%20Dra.%20Dorsy,%20quiero%20una%20consulta%20legal" target="_blank" class="whatsapp-btn">
+                    📱 WhatsApp
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Defensa Legal Ganadora</h1>
+            <p>Especializada en <span class="hero-highlight">Familia • Civil • Penal • Notarial</span></p>
+            <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 2rem;">Más de 15 años litigando en Trujillo, La Libertad. Resultados comprobados.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('resultados').scrollIntoView({behavior:'smooth'})">Ver Casos Ganados</button>
+                <a href="https://wa.me/51983215605?text=Quiero%20una%20consulta%20legal%20con%20la%20Dra.%20Dorsy" target="_blank" class="btn-secondary">Consulta vía WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="resultados">
+        <div class="container">
+            <h2 class="section-title">Casos Ganados</h2>
+            <p class="section-subtitle">Resultados reales que hablan por sí solos</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-text">Casos Litigados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-text">Tasa de Éxito</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-text">Años Experiencia</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-text">Confidencial</div>
+                </div>
+            </div>
+
+            <div class="casos-exitos">
+                <div class="caso-card">
+                    <div class="caso-header">
+                        <span class="caso-tipo">VIOLENCIA FAMILIAR</span>
+                        <div class="caso-titulo">ABSOLUTORIA</div>
+                        <div class="caso-resultado">✓ SENTENCIA FAVORABLE</div>
+                    </div>
+                    <div class="caso-body">
+                        <div class="caso-detalle">
+                            <strong>Caso:</strong> Violencia Familiar - Delito menor
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Resultado:</strong> Sentencia absolutoria por falta de pruebas suficientes de la denunciante
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Base Legal:</strong> Presunción de inocencia + análisis de pruebas bajo sistema acusatorio
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Impacto:</strong> Cliente recuperó libertad y reputación
+                        </div>
+                    </div>
+                </div>
+
+                <div class="caso-card">
+                    <div class="caso-header">
+                        <span class="caso-tipo">ALIMENTOS</span>
+                        <div class="caso-titulo">EJECUCIÓN EXITOSA</div>
+                        <div class="caso-resultado">✓ PENSIÓN COBRADA</div>
+                    </div>
+                    <div class="caso-body">
+                        <div class="caso-detalle">
+                            <strong>Caso:</strong> Cobro de pensión de alimentos vencida
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Resultado:</strong> Ejecución de fallo anterior + embargo de cuenta bancaria del demandado
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Cantidad Recuperada:</strong> S/ 18,500 en atrasos + pensión mensual asegurada
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Impacto:</strong> Menor recibe soporte económico garantizado
+                        </div>
+                    </div>
+                </div>
+
+                <div class="caso-card">
+                    <div class="caso-header">
+                        <span class="caso-tipo">DELITO ESTAFA</span>
+                        <div class="caso-titulo">SENTENCIA FAVORABLE</div>
+                        <div class="caso-resultado">✓ PENA REDUCIDA</div>
+                    </div>
+                    <div class="caso-body">
+                        <div class="caso-detalle">
+                            <strong>Caso:</strong> Acusación de estafa simple
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Resultado:</strong> Reclasificación de delito + pena por debajo de lo solicitado por fiscalía
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Estrategia:</strong> Análisis forense de pruebas + argumentación sobre elementos del tipo penal
+                        </div>
+                        <div class="caso-detalle">
+                            <strong>Impacto:</strong> Reducción significativa de pena con posibilidad de suspensión condicional
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+        <div class="container">
+            <h2 class="section-title">Servicios Legales</h2>
+            <p class="section-subtitle">Atención integral en todas las áreas del derecho</p>
+            
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Derecho de Familia</h3>
+                    <p>Alimentos, divorcio, tenencia de menores, régimen de visitas, patria potestad y disputas familiares complejas.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">⚖️</div>
+                    <h3>Litigios Civiles</h3>
+                    <p>Controversias contractuales, nulidad de actos jurídicos, sucesiones, responsabilidad civil y cobros de deudas.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">🛡️</div>
+                    <h3>Defensa Penal</h3>
+                    <p>Represión de delitos, defensa de imputados, víctimas y agraviados ante la justicia penal. Especial énfasis en delitos complejos.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">📋</div>
+                    <h3>Asuntos Notariales</h3>
+                    <p>Escrituras públicas, poderes especiales, apostillas, legalizaciones y trámites de legalización de firmas.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">🌍</div>
+                    <h3>Asuntos Internacionales</h3>
+                    <p>Casos transfronterizos, diligencias en el exterior, exhortos judiciales y trámites con consulados y embajadas.</p>
+                </div>
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon">💼</div>
+                    <h3>Consultoría Legal</h3>
+                    <p>Asesoría preventiva, análisis de riesgos legales, planificación patrimonial y orientación en casos complejos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre la Dra. Dorsy Varas</h2>
+            
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h3>Abogada Litigante Especializada</h3>
+                    <p>Soy <strong>Dorsy Marly Varas Alvarado</strong>, abogada litigante registrada ante la Corte Superior de Justicia de La Libertad. Con base en Laredo, Trujillo, he dedicado mi carrera a defender los derechos de mis clientes con dedicación, ética profesional y expertise técnico.</p>
+                    
+                    <p>Mi práctica se enfoca en <strong>derecho de familia, litigios civiles complejos, defensa penal integral y representación de víctimas</strong>. He manejado casos de alto impacto, desde disputas de custodia hasta defensa en procesos penales bajo el sistema acusatorio y ejecuciones de sentencias.</p>
+                    
+                    <p>Mi compromiso es simple: ofrecerte soluciones legales <strong>efectivas, honestidad en cada etapa</strong> y la confianza de saber que tu caso está en manos de una profesional experimentada, dedicada y comprometida con tus derechos.</p>
+
+                    <div class="credenciales">
+                        <h4 style="margin-bottom: 1rem; color: var(--primary); font-weight: 700;">Credenciales Profesionales</h4>
+                        <ul>
+                            <li><strong>CAL N.° 013334 / 013336</strong> - Registro profesional verificado</li>
+                            <li><strong>SINOE Casilla Electrónica N.° 163648</strong> - Habilitada para recepciones judiciales</li>
+                            <li><strong>Especialización</strong> - Derecho Civil, Penal y Litigación Compleja</li>
+                            <li><strong>Experiencia</strong> - 15+ años litigando en cortes de La Libertad</li>
+                            <li><strong>Competencia</strong> - Arbitraje, mediación y todas las áreas del derecho privado</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sobre-imagen">
+                    <img src="https://via.placeholder.com/280x350/0d2b4a/d4af37?text=Dra.+Dorsy+Varas" alt="Dra. Dorsy Varas" class="foto-dorsy">
+                    <h4>Dra. Dorsy Marly Varas Alvarado</h4>
+                    <p class="titulo">Abogada Litigante</p>
+                    <p style="opacity: 0.9; font-size: 0.9rem;">📍 Laredo, Trujillo, La Libertad - Perú</p>
+                    <p style="opacity: 0.9; font-size: 0.9rem;">📱 +51 983 215 605</p>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">Estudio Jurídico Varas Alvarado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Testimonios de Clientes</h2>
+            <p class="section-subtitle">Historias reales de personas cuyas vidas cambiaron</p>
+            
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonio-texto">"Después de años sin recibir alimentos, la Dra. Varas logró que se ejecutara el fallo y recibiera el embargo. Profesional seria, resultados reales. Muy recomendada."</p>
+                    <p class="testimonio-autor">María L. - Cliente Alimentos</p>
+                </div>
+                
+                <div class="testimonio-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonio-texto">"En mi caso de custodia, la Dra. Varas presentó pruebas sólidas y argumentos que el juez consideró decisivos. Ahora tengo la tenencia compartida y relación estable con mis hijos."</p>
+                    <p class="testimonio-autor">Carlos R. - Cliente Familia</p>
+                </div>
+                
+                <div class="testimonio-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonio-texto">"Enfrentaba un proceso penal injusto. La Dra. Varas preparó una defensa minuciosa que terminó en sentencia favorable. Recuperé mi libertad y mi vida. Infinitamente agradecido."</p>
+                    <p class="testimonio-autor">Juan M. - Cliente Defensa Penal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctame</h2>
+            <p class="section-subtitle">Primera consulta sin compromiso - Respuesta en 24 horas</p>
+            
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📱</div>
+                        <div>
+                            <h4>WhatsApp Directo</h4>
+                            <p>+51 983 215 605</p>
+                            <p style="opacity: 0.8; font-size: 0.9rem;">Disponible de lunes a sábado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📍</div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Laredo, Trujillo</p>
+                            <p>La Libertad - Perú</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-icon">⏰</div>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                            <p>Sábados: 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contacto-item">
+                        <div class="contacto-icon">📋</div>
+                        <div>
+                            <h4>Registros Profesionales</h4>
+                            <p>CAL N.° 013334 / 013336</p>
+                            <p>SINOE N.° 163648</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contacto-form" onsubmit="handleSubmit(event)">
+                    <input type="text" placeholder="Tu nombre completo" required>
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <input type="tel" placeholder="Tu teléfono" required>
+                    <textarea placeholder="Cuéntame brevemente tu caso y qué área necesitas..." required></textarea>
+                    <button type="submit">Enviar Consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#sobre">Sobre Mí</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="https://wa.me/51983215605" target="_blank">WhatsApp</a>
+        </div>
+        <p>&copy; 2025 Estudio Jurídico Varas Alvarado. Todos los derechos reservados.</p>
+        <p>Laredo, Trujillo, La Libertad - Perú | CALL N.° 013334 </p>
+    </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('✅ Consulta recibida. Te contactaremos en 24 horas por WhatsApp o teléfono.');
+            event.target.reset();
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
